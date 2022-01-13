@@ -1,0 +1,30 @@
+[api-updater (non-obsolete-error-filter)] 1/12/2022 9:22:31 PM : Starting C:/Users/envoy/Documents/Unity/Editors/2020.3.25f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 618.2307ms
+moved types parse time: 66ms
+candidates parse time : 0ms
+C# parse time         : 445ms
+candidates check time : 30ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 1/12/2022 9:27:48 PM : Starting C:/Users/envoy/Documents/Unity/Editors/2020.3.25f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 44.0096ms
+moved types parse time: 36ms
+candidates parse time : 0ms
+C# parse time         : 137ms
+candidates check time : 29ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 1/13/2022 11:06:39 AM : Starting C:/Users/envoy/Documents/Unity/Editors/2020.3.25f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 516.2208ms
+moved types parse time: 50ms
+candidates parse time : 0ms
+C# parse time         : 415ms
+candidates check time : 29ms
+console write time    : 0ms
+
