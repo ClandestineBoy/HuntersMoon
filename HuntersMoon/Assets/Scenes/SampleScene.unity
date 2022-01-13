@@ -450,10 +450,16 @@ MonoBehaviour:
   currentX: 0
   currentY: 0
   verticalLook: {fileID: 963194228}
+  walkSpeed: 3.5
+  runSpeed: 5
+  crouchSpeed: 2
+  crawlSpeed: 1
   moveSpeed: 3
   moveDirection: {x: 0, y: 0, z: 0}
   gravity: -9.81
   downRayDistance: 1.08
+  state: 0
+  crawlHoldTime: 0.6
 --- !u!1 &1661413824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,21 +1167,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 1721990834}
   m_IsSelectable: 1
-  m_SelectedFaces: 04000000
-  m_SelectedEdges:
-  - a: 18
-    b: 19
-  - a: 23
-    b: 18
-  - a: 19
-    b: 20
-  - a: 22
-    b: 23
-  - a: 20
-    b: 21
-  - a: 21
-    b: 22
-  m_SelectedVertices: 120000001300000017000000140000001600000015000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!4 &1661413829
 Transform:
   m_ObjectHideFlags: 0
