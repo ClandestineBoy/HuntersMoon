@@ -37,6 +37,8 @@ public class playerController : MonoBehaviour
     public enum PlayerState { walk, run, crouch, crawl };
     [Header("Player State")]
     public PlayerState state = new PlayerState();
+    public float crawlHoldTime = 0.6f;
+    float startHoldTime;
 
 
     void Start()
@@ -78,10 +80,30 @@ public class playerController : MonoBehaviour
 
     void ManageStates()
     {
-        if(state == PlayerState.walk)
+        //pressing the crouch button resets the timer that determines if you're trying to crouch or crawl
+        if (Input.GetButtonDown("Crouch"))
+        {
+            startHoldTime = Time.time;
+        }
+
+        if (state == PlayerState.walk)
         {
             moveSpeed = walkSpeed;
-            Debug.Log(Input.GetAxis("Crouch"));
+
+            if (Input.GetButton("Crouch")) { 
+                //holding the crouch button for a certain time will switch player to crawl state
+                if (Time.time - startHoldTime >= crawlHoldTime)
+                {
+                    state = PlayerState.crawl;
+                } 
+            }
+            //releaseing crouch button before crawl state will set player to crouch state
+            if (Input.GetButtonUp("Crouch") && Time.time - startHoldTime < crawlHoldTime)
+            {
+                state = PlayerState.crouch;
+                startHoldTime = -crawlHoldTime;
+            }
+
         }
 
         if (state == PlayerState.run)
@@ -92,13 +114,33 @@ public class playerController : MonoBehaviour
         if (state == PlayerState.crouch)
         {
             moveSpeed = crouchSpeed;
+
+            //holding the crouch button for a certain time will switch player to crawl state
+            if (Input.GetButton("Crouch"))
+            {
+                if (Time.time - startHoldTime >= crawlHoldTime)
+                {
+                    state = PlayerState.crawl;
+                }
+            }
+            //releaseing crouch button before crawl state will set player to walk state
+            if (Input.GetButtonUp("Crouch") && Time.time - startHoldTime < crawlHoldTime)
+            {
+                state = PlayerState.walk;
+                startHoldTime = -crawlHoldTime;
+            }
         }
 
         if (state == PlayerState.crawl)
         {
             moveSpeed = crawlSpeed;
-        }
 
+            //holding the crouch button and tapping it will switch player to crouch state
+            if (Input.GetButtonUp("Crouch") && Time.time - startHoldTime < crawlHoldTime)
+            {
+                    state = PlayerState.crouch;
+            }
+        }
     }
 
     void Look()
